@@ -8,15 +8,13 @@ import io.github.fullee.GoFdp.visitor.ops.PrintVisitor;
 import io.github.fullee.GoFdp.visitor.ops.TimeVisitor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
     public static void main(String[] args) {
 
-        ArrayList<Language> languages = new ArrayList<Language>();
-        languages.add(new JavaScript());
-        languages.add(new Python());
-        languages.add(new Ruby());
+        List<Language> languages = generator();
 
         PrintVisitor printVisitor = new PrintVisitor();
         languages.forEach((x)->{
@@ -28,6 +26,14 @@ public class Application {
             x.accept(timeVisitor);
         });
 
+    }
+
+    public static List<Language> generator(){
+        ArrayList<Language> languages = new ArrayList<Language>();
+        languages.add(new JavaScript());
+        languages.add(new Python());
+        languages.add(new Ruby());
+        return languages;
     }
 
 }

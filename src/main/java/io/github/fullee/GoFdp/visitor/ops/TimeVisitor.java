@@ -5,6 +5,7 @@ import io.github.fullee.GoFdp.visitor.obj.Python;
 import io.github.fullee.GoFdp.visitor.obj.Ruby;
 
 public class TimeVisitor extends Visitor {
+
     public void visit(Ruby ruby) {
         System.out.println("Time.new");
     }
